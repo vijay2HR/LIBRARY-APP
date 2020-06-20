@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="keywords" content="example, JavaScript Form Validation, Sample registration form" />
+      <meta name="description" content="This document is an example of JavaScript Form Validation using a sample registration form. " />
+      <title>Library Page Signup</title>
+      <link rel="stylesheet" href="/css/addbooks.css">
+    </head>
+<body background="/images/ANIB1.gif" onload="document.registration.username.focus();">
+ <header>       
+    
+
+ </header> 
+      <div class="head1">
+        <%for(i=0;i<navb.length;i++){%>
+          <li>
+            <a href="<%=navb[i].link%>"><%=navb[i].name%></a>
+          </li>
+          <%}%>
+        <!-- <a class="active" href="/src/views/index.html" >HOME</button></a>
+        <a class="active" href="#" >SIGN UP</button></a>
+        <a class="active" href="/src/views/1 LIBlogin.html">LOG IN</button></a> -->
+      </div>
+
+      <div class="head2">
+        <p class="head">Add Books</p>
+      </div>
+ 
+      <div class="head3"> 
+        <!-- <h3>Library Sign Up</h3> -->
+      </div>
+      <div class="head4"> 
+        <div class="signup">
+          <h1>Enter Book Details</h1>
+          Use tab keys to move from one input field to the next.
+          <!-- <form action="./index" name='registration'  onsubmit="return formValidation()"> -->
+            <form >
+          <ul>
+
+            <li><label for="booktitle">Book Title:</label></li>
+            <li><input type="text" name="booktitle" placeholder="Enter book title"size="50" /></li>
+
+            <li><label for="bookauthor">Author:</label></li>
+            <li><input type="text" name="bookauthor" placeholder="Enter Author"size="50" /></li>
+          
+            <li><label for="genre">Genre:</label></li>
+            <li><input type="text" name="genre" placeholder="Enter Book Genre"size="50" /></li>
+
+            <li><label for="phno">Phone Number:</label></li>
+            <li><input type="text" name="phno" placeholder="Enter Phone Number"/></li>
+            <img src="/images/ronald dahl.jpg" alt="Avatar" class="avatar"> 
+          <li><input type="submit" id="submit" name="submit" value="Submit" /></li>
+        </ul>
+
+          <!-- <div class="button1">
+            <button type="submit" id="submit">Sign Up</button> 
+            </div> -->
+            
+          </form>
+        </div> 
+            
+      </div>
+
+      
+        <!-- <script src="/js/1 LIBsignup.js"></script> -->
+</body>
+</html>

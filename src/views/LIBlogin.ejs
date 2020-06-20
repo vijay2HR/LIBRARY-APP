@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="keywords" content="example, JavaScript Form Validation, Sample registration form" />
+      <meta name="description" content="This document is an example of JavaScript Form Validation using a sample registration form. " />
+      <title>Library Page LogIn</title>
+      <link rel="stylesheet" href="/css/1 LIBlogin.css">
+    </head>
+<body background="/images/ANIB1.gif" onload="document.registration.username.focus();">
+ <header>       
+    
+
+ </header> 
+      <div class="head1">
+        <%for(i=0;i<nav.length;i++){%>
+          <li>
+            <a href="<%=nav[i].link%>"><%=nav[i].name%></a>
+          </li>
+          <%}%>
+        <!-- <a class="active" href="/src/views/index.html" >HOME</button></a>
+        <a class="active" href="/src/views/1 LIBsignup.html" >SIGN UP</button></a>
+        <a class="active" href="#">LOG IN</button></a> -->
+      </div>
+
+      <div class="head2">
+        <p class="head">Library</p>
+      </div>
+ 
+      
+      <div class="head4"> 
+        <!-- <div class="head4" onload="document.registration.username.focus();">  -->
+        <div class="signup">
+          <h1>Log In Form</h1>
+         
+          <form action="./LIBlogged" name='registration'  onsubmit="return formValidation()">
+            <ul>
+
+
+            <li><label for="email">Email:</label></li>
+            <li><input type="text" name="email" placeholder="Enter Email" size="50" /></li>
+          
+
+
+            <li><label for="passid">Password:</label></li>
+            <li>  <input type="password" id="psw" size="50"  placeholder="Enter Password" name="passid" onkeyup="return CheckPasswordStrength(this.value)" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"/> </li>
+            <span id="password_strength" name="password_strength"></span>
+
+             <li><input type="submit" id="submit" name="submit" value="Log In" /></li>
+            </ul>
+
+          <!-- <div class="button1">
+            <button type="submit" id="submit">Sign Up</button> 
+            </div> -->
+            
+          </form>
+        </div> 
+       
+      </div> 
+      
+      </div>
+      <div class="head5"> 
+        <img src="/images/ANIBACKGROUND.gif" alt="Avatar" class="avatar">  
+        <div class="head5-1">
+          <h3>A reader lives a thousand lives before he dies</h3>
+          <h3>Never trust anyone who has not brought a book with them</h3>
+          <h3>People say that life is the thing, but I prefer reading.</h3>
+        </div>  
+      
+        <script src="/js/1 LIBlogin.js"></script>
+</body>
+</html>
