@@ -1,12 +1,12 @@
 const express=require('express');
 //for express router
 const signupeddRouter=express.Router();
-function router(navb){
+function router(nav){
 
 
     signupeddRouter.get('/',function(req,res){
-            res.render("LIBlogged",
-                { navb,
+            res.render("index",
+                { nav,
                 title:'Library',
                 // books
     
