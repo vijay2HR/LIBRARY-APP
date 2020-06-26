@@ -7,16 +7,17 @@
       <title>Library Page Signup</title>
       <link rel="stylesheet" href="/css/1 LIBsignup.css">
     </head>
-<body background="/images/ANIB1.gif" onload="document.registration.username.focus();">
+<!-- <body background="/images/ANIB1.gif" onload="document.registration.username.focus();"> -->
+  <body>
  <header>       
     
 
  </header> 
       <div class="head1">
         <%for(i=0;i<nav.length;i++){%>
-          <li>
+          <!-- <li> -->
             <a href="<%=nav[i].link%>"><%=nav[i].name%></a>
-          </li>
+          <!-- </li> -->
           <%}%>
         <!-- <a class="active" href="/src/views/index.html" >HOME</button></a>
         <a class="active" href="#" >SIGN UP</button></a>
@@ -32,9 +33,11 @@
       </div>
       <div class="head4"> 
         <div class="signup">
-          <h1>Registration Form</h1>
+          <h1>SIGNUP FORM</h1>
           Use tab keys to move from one input field to the next.
-          <form action="./index" name='registration'  onsubmit="return formValidation()">
+          <form method="POST" action="/LIBsignup/add" name='registration'  onsubmit="return formValidation()">
+            <!-- <form method="POST" action="/LIBsignup/add"><br><br> -->
+              <!-- add above -->
           <ul>
 
             <li><label for="username">Name:</label></li>
@@ -72,6 +75,7 @@
           <li><label for="desc">About:</label></li>
           <li><textarea name="desc" id="desc"></textarea></li>
           <li><input type="submit" id="submit" name="submit" value="Submit" /></li>
+          <!-- <button type="submit">Add</button><br><br> -->
         </ul>
 
           <!-- <div class="button1">

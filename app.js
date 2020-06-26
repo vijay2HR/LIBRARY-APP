@@ -35,8 +35,10 @@ const signupedRouter = require('./src/routes/signupedRoutes')(nav);
 const logedRouter = require('./src/routes/loggedRoutes')(navb);
 const bookRouter = require('./src/routes/bookRoutes')(navb);
 const authorRouter = require('./src/routes/authorRoutes')(navb);
-const addbooksRouter = require('./src/routes/addbooksRoutes')(navb);
-// to use static css and js
+const adminRouter = require('./src/routes/adminRoutes')(navb);
+// to use mongodb
+app.use(express.urlencoded({extended:true}));
+// to use static css and js 
 app.use(express.static('./public'));
 //for ejs
 app.set('view engine','ejs');
@@ -49,7 +51,7 @@ app.use('/index',signupedRouter);
 app.use('/LIBlogged',logedRouter);
 app.use('/LIBbooks',bookRouter);
 app.use('/author',authorRouter);
-app.use('/addbooks',addbooksRouter);
+app.use('/addbooks',adminRouter);
 //router create
 app.get('/',function(req,res){
 res.render("index",
