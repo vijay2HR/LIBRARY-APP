@@ -102,7 +102,12 @@
               <div class="row">
                 <div class="col-xs-9">
                   <h4><span class="label label-default"><%=books[i].author%></span></h4><h4>
-                  <small style="font-family:courier,'new courier';" class="text-muted"><%=books[i].genre%> . <a href="/LIBbooks/<%=books[i]._id%>" class="text-muted">Read More</a></small>
+                  <small style="font-family:courier,'new courier';" class="text-muted"><%=books[i].genre%> .
+                  <a href="/LIBbooks/<%=books[i]._id%>" class="text-muted">Read More</a></small>
+                  <!-- <form method="POST" action="/addbooks/add"><br><br> -->
+                  
+                  <a href="/LIBbooks/update>/<%=books[i]._id%>" class="text-muted"><button>UPDATE</button></a>
+                  <a href="/LIBbooks/delete/<%=books[i]._id%>>" class="text-muted"><button>DELETE</button></a>
                   </h4></div>
                 <div class="col-xs-3"></div>
               </div>

@@ -14,13 +14,9 @@
  </header> 
       <div class="head1">
         <%for(i=0;i<nav.length;i++){%>
-          <!-- <li> -->
             <a href="<%=nav[i].link%>"><%=nav[i].name%></a>
-          <!-- </li> -->
           <%}%>
-        <!-- <a class="active" href="/src/views/index.html" >HOME</button></a>
-        <a class="active" href="/src/views/1 LIBsignup.html" >SIGN UP</button></a>
-        <a class="active" href="#">LOG IN</button></a> -->
+
       </div>
 
       <div class="head2">
@@ -29,11 +25,10 @@
  
       
       <div class="head4"> 
-        <!-- <div class="head4" onload="document.registration.username.focus();">  -->
         <div class="signup">
           <h1>Log In Form</h1>
          
-          <form action="./LIBlogged" name='registration'  onsubmit="return formValidation()">
+            <form method="GET" action="/LIBlogin/LogIn"  name='registration' >
             <ul>
 
 
@@ -49,10 +44,6 @@
              <li><input type="submit" id="submit" name="submit" value="Log In" /></li>
             </ul>
 
-          <!-- <div class="button1">
-            <button type="submit" id="submit">Sign Up</button> 
-            </div> -->
-            
           </form>
         </div> 
        
