@@ -30,37 +30,83 @@ function router(navb){
                 });
                 
             });
-            // bookRouter.get('/delete/:id',function(req,res){
-            //     // res.send(req.params.id);
-            //     // const id=req.params.id
-            //     Bookdata.remove({_id:req.params.id},function(err,delData){
-            //         res.redirect('/LIBlogged');
-            //     });
-            //     // Bookdata.findOne({_id:id})
-            //     // .then(function(book){
-            //     // Bookdata.deleteOne({_id:id});
-            //     // Bookdata.save();
-            //     // res.redirect('/LIBbooks');
-                
-                
-            // });
-            bookRouter.delete('/delete/:id',function(req,res){
-                // res.send(req.params.id);
-                const id=req.params.id
-                Bookdata.findOneAndRemove({_id:id},function(err){
-                    if(err){
-                        res.send("could not delete")
-                    }
-                    res.redirect('/LIBlogged');
-                });
-                // Bookdata.findOne({_id:id})
-                // .then(function(book){
-                // Bookdata.deleteOne({_id:id});
-                // Bookdata.save();
-                // res.redirect('/LIBbooks');
-                
+          
+            bookRouter.get('/delete/:id',function(req,res){
+                // const id=req.params.id
+                 var item={
+                    _id:req.params.id,
+                    title:req.params.title,
+                    author:req.params.author,
+                    genre:req.params.genre,
+                    image:req.params.image
+                };
+                var book = Bookdata(item);
+                book.delete();
+                res.redirect('/LIBlogged');
                 
             });
+
+           
+            bookRouter.get('/book/edit/:id',function(req,res){
+                const id=req.params.id
+                Bookdata.findOne({_id:id})
+                .then(function(book){
+                    res.render('editbook',
+                    { navb,
+                    title:'Edit Book',
+                    book
+                        
+                    });
+                });
+                
+            });
+            bookRouter.post('/book/editbook/update/:id',function(req,res){
+                // var item={
+                //     _id:req.body.id,
+                //     title:req.body.title,
+                //     author:req.body.author,
+                //     genre:req.body.genre,
+                //     image:req.body.image
+                // };
+                const id=req.body.id;
+                Bookdata.findOneAndUpdate({_id:id},
+                    {$set:{title:req.body.title}},
+                    {$set:{author:req.body.author}},
+                    {$set:{genre:req.body.genre}},
+                    {$set:{image:req.body.image}}
+                    // function (err, doc) {
+
+                    //     if (err) {
+                    
+                    //         console.log("update document error");
+                    
+                    //     } else {
+                    
+                    //         console.log("update document success");
+                    
+                    //         console.log(doc);
+                    
+                    //     }
+                    
+                    // }
+                    );
+                // var book = Bookdata(item);
+                // book.update();
+                res.redirect('/LIBbooks');
+                // const id=req.params.id
+                // Bookdata.findOne({_id:id})
+                // .then(function(book){
+                //     res.render('editbook',
+                //     { navb,
+                //     title:'Edit Book',
+                //     book
+                        
+                //     });
+                // });
+                
+            });
+           
+                
     return bookRouter;
 }
 
