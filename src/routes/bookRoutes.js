@@ -60,51 +60,27 @@ function router(navb){
                 });
                 
             });
-            bookRouter.post('/book/editbook/update/:id',function(req,res){
-                // var item={
-                //     _id:req.body.id,
-                //     title:req.body.title,
-                //     author:req.body.author,
-                //     genre:req.body.genre,
-                //     image:req.body.image
-                // };
-                const id=req.body.id;
-                Bookdata.findOneAndUpdate({_id:id},
-                    {$set:{title:req.body.title}},
-                    {$set:{author:req.body.author}},
-                    {$set:{genre:req.body.genre}},
-                    {$set:{image:req.body.image}}
-                    // function (err, doc) {
-
-                    //     if (err) {
-                    
-                    //         console.log("update document error");
-                    
-                    //     } else {
-                    
-                    //         console.log("update document success");
-                    
-                    //         console.log(doc);
-                    
-                    //     }
-                    
-                    // }
-                    );
-                // var book = Bookdata(item);
-                // book.update();
-                res.redirect('/LIBbooks');
+            bookRouter.post('/editbook/update/:id',function(req,res){
                 // const id=req.params.id
-                // Bookdata.findOne({_id:id})
-                // .then(function(book){
-                //     res.render('editbook',
-                //     { navb,
-                //     title:'Edit Book',
-                //     book
-                        
-                //     });
-                // });
+                console.log(req.body.id);
+                Bookdata.updateOne({
+                    _id: req.body.id
+                }, {
+                    $set: {
+                        title: req.body.title,
+                        author:req.body.author,
+                        genre:req.body.genre,
+                        image:req.body.image
+                    }
+                }, function(err, results) {
+                    // console.log(results.result);
+                });
+                // book.updateOne();
+                // Bookdata.close();
+                res.redirect('/LIBlogged');
+                    
+                    });
                 
-            });
            
                 
     return bookRouter;
